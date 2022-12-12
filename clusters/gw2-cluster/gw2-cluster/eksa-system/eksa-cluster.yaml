@@ -46,7 +46,7 @@ spec:
     name: md-0
   identityProviderRefs:
   - kind: AWSIamConfig
-    name: aws-iam-auth-config    
+    name: aws-iam-auth-config
        
 ---
 apiVersion: anywhere.eks.amazonaws.com/v1alpha1
@@ -139,17 +139,6 @@ spec:
     sshKeyAlgorithm: rsa
   systemNamespace: flux-system
 
----
-apiVersion: anywhere.eks.amazonaws.com/v1alpha1
-kind: Cluster
-metadata:
-   name: my-cluster-name
-spec:
-   ...
-   # IAM Authenticator
-   identityProviderRefs:
-      - kind: AWSIamConfig
-        name: aws-iam-auth-config
 ---
 apiVersion: anywhere.eks.amazonaws.com/v1alpha1
 kind: AWSIamConfig
