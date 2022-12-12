@@ -44,9 +44,6 @@ spec:
       kind: VSphereMachineConfig
       name: gw2-cluster-dp
     name: md-0
-  identityProviderRefs:
-  - kind: AWSIamConfig
-    name: aws-iam-auth-config
        
 ---
 apiVersion: anywhere.eks.amazonaws.com/v1alpha1
@@ -140,27 +137,4 @@ spec:
   systemNamespace: flux-system
 
 ---
-apiVersion: anywhere.eks.amazonaws.com/v1alpha1
-kind: AWSIamConfig
-metadata:
-   name: aws-iam-auth-config
-spec:
-    awsRegion: us-west-2
-    backendMode:
-        - EKSConfigMap
-    mapRoles:
-        - roleARN: arn:aws:iam::505670647613:role/GW2-IRSA-AMP-Role
-          username: gw2-cluster-admin
-          groups:
-          - system:masters
-        - roleARN: arn:aws:iam::505670647613:role/GW2-IRSA-AMP-Role
-          username: test-sa
-          groups:
-          - system:masters          
-    #mapUsers:
-    #    - userARN: arn:aws:iam::505670647613:role/GW2-IRSA-AMP-Role
-    #      username: gw2-cluster-admin
-    #      groups:
-    #      - system:masters
-    partition: aws
 
