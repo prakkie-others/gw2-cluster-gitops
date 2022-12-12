@@ -45,8 +45,8 @@ spec:
       name: gw2-cluster-dp
     name: md-0
   identityProviderRefs:
-     - kind: AWSIamConfig
-       name: aws-iam-auth-config    
+  - kind: AWSIamConfig
+    name: aws-iam-auth-config    
        
 ---
 apiVersion: anywhere.eks.amazonaws.com/v1alpha1
